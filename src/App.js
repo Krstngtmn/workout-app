@@ -1,43 +1,55 @@
 import { useEffect, useState } from "react";
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-} from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import Loginview from "./components/Loginview";
-// import Button from "./components/Button";
-import Myworkouts from "./components/Myworkouts";
-import Account from "./components/Account";
+import RegisterView from "./pages/RegisterView";
+import LoginView from "./components/LoginView";
+import Home from "./components/Home";
+import Account from "./pages/Account";
+import CreateWorkoutview from "./pages/Createworkoutview";
+import WorkoutCreated from "./pages/WorkoutCreated";
+import WorkoutDone from "./pages/WorkoutDone";
+import WorkoutList from "./pages/WorkoutList";
+import NewUser from "./pages/NewUser";
+import LandingPage from "./pages/LandingPage";
+import Dashboard from "./pages/Dashboard";
+import WorkoutConstructor from "./pages/WorkoutConstructor";
+import ExerciseSelector from "./pages/ExerciseSelector";
 
 import "./styles/App.scss";
-
 
 const App = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Myworkouts />} />
+        <Route path="/" element={<Home />} />
+        <Route path="register" element={<RegisterView />} />
+        <Route path="login" element={<LoginView />} />
         <Route path="account" element={<Account />} />
-        <Route path="login" element={<Loginview />} />
+        <Route path="createnew" element={<CreateWorkoutview />} />
+        <Route path="newcreated" element={<WorkoutCreated />} />
+        <Route path="welcome" element={<LandingPage />} />
+        <Route path="completed" element={<WorkoutDone />} />
+        <Route path="newuser" element={<NewUser />} />
+        <Route path="myworkout" element={<WorkoutList />} />
+        <Route path="build" element={<WorkoutConstructor />} />
+        <Route path="buildselect" element={<ExerciseSelector />} />
+        <Route path="dashboard" element={<Dashboard />} />
       </Routes>
     </BrowserRouter>
   );
-}
+};
 
 // function App() {
 //   return (
 //     <div className="App">
 //       <Router>
-//         <Route path="/" element={<Myworkouts />} />
+//         <Route path="/" element={<Home />} />
 //         <Route path="about" element={<Account />} />
-//         <Route path="login" element={<Loginview />} />
+//         <Route path="login" element={<LoginView />} />
 //       </Router>
 //     </div>
 //   );
 // }
-
-
 
 // function App() {
 //   const adminUser = {

@@ -1,6 +1,6 @@
 import React from "react";
 
-function DoneWorkoutComplete() {
+function WorkoutDone() {
   return (
     <div className="done-container">
       <div className="message">
@@ -17,4 +17,4 @@ function DoneWorkoutComplete() {
   );
 }
 
-export default DoneWorkoutComplete;
+export default WorkoutDone;

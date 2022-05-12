@@ -1,8 +1,7 @@
 import { useState } from "react";
-import "../styles/Loginview.scss";
+import "../styles/LoginView.scss";
 
-const Loginview = ({ Login, error }) => {
-// function Loginview({ Login, error }) {
+const LoginView = ({ Login, error }) => {
   const [details, setDetails] = useState({
     username: "",
     email: "",
@@ -72,4 +71,4 @@ const Loginview = ({ Login, error }) => {
   );
 }
 
-export default Loginview;
+export default LoginView;
