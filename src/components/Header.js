@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter, Link } from "react-router-dom";
-import "../styles/Menu.scss";
+import "../styles/Header.scss";
 
 function Header() {
   return (
@@ -10,16 +10,16 @@ function Header() {
           <Link to="/">My workouts</Link>
         </li>
         <li>
-          <a href="#">Create workout</a>
+          <a href="/build">Create workout</a>
         </li>
         <li>
-          <a href="#">Dashboard</a>
+          <a href="/dashboard">Dashboard</a>
         </li>
         <li>
           <Link to="/account">Account</Link>
         </li>
         <li>
-          <a href="#">Log out</a>
+          <a href="/logout">Log out</a>
         </li>
         <li>
           <Link to="/login">Login</Link>

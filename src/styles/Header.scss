@@ -9,12 +9,13 @@
 @include foundation-flex-classes;
 @include add-foundation-colors;
 
-.footer {
-  position: absolute;
-  bottom: 0;
-  height: 2rem;
-  width: 100%;
-  background-color: grey;
-  color: $black;
-  text-align: center;
+.menu-list {
+}
+.vertical-menu {
+  display: flex;
+  justify-content: space-around;
+}
+
+li {
+  list-style: none;
 }

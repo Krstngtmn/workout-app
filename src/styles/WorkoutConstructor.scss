@@ -9,10 +9,23 @@
 @include foundation-flex-classes;
 @include add-foundation-colors;
 
-.menu-list {
+.constructor-view {
+  position: relative;
+  display: flex;
+  width: 414px;
+  height: 896px;
+  align-items: center;
+  z-index: 1;
 }
-.vertical-menu {
-}
-li {
-  list-style: none;
+
+.bg-circle {
+  position: absolute;
+  width: 706px;
+  height: 706px;
+  left: 16px;
+  top: 144px;
+  background-color: $primary-color;
+  border-radius: 50% 0 0 50%;
+  opacity: 0.3;
+  z-index: -1;
 }

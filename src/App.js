@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import RegisterView from "./pages/RegisterView";
-import LoginView from "./components/LoginView";
-import Home from "./components/Home";
+import LoginView from "./pages/LoginView";
+import Home from "./pages/Home";
 import Account from "./pages/Account";
 import CreateWorkoutview from "./pages/Createworkoutview";
 import WorkoutCreated from "./pages/WorkoutCreated";
@@ -14,6 +14,7 @@ import LandingPage from "./pages/LandingPage";
 import Dashboard from "./pages/Dashboard";
 import WorkoutConstructor from "./pages/WorkoutConstructor";
 import ExerciseSelector from "./pages/ExerciseSelector";
+import Logout from "./pages/Logout";
 
 import "./styles/App.scss";
 
@@ -34,6 +35,7 @@ const App = () => {
         <Route path="build" element={<WorkoutConstructor />} />
         <Route path="buildselect" element={<ExerciseSelector />} />
         <Route path="dashboard" element={<Dashboard />} />
+        <Route path="logout" element={<Logout />} />
       </Routes>
     </BrowserRouter>
   );
