@@ -1,0 +1,18 @@
+@import "settings";
+@import "~foundation-sites/scss/foundation";
+@include foundation-global-styles;
+@include foundation-xy-grid-classes;
+@include foundation-typography;
+@include foundation-accordion;
+@include foundation-visibility-classes;
+@include foundation-float-classes;
+@include foundation-flex-classes;
+@include add-foundation-colors;
+
+.menu-list {
+}
+.vertical-menu {
+}
+li {
+  list-style: none;
+}

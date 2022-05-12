@@ -1,8 +1,14 @@
-import React from 'react'
+import { Fragment } from 'react';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 function Account() {
   return (
-    <div>Account</div>
+    <Fragment>
+      <Header />
+        <div>Account</div>
+      <Footer />
+    </Fragment>
   )
 }
 

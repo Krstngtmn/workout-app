@@ -1,9 +1,16 @@
-import React from 'react'
+import { Fragment } from 'react';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+
 import "../styles/Myworkouts.scss";
 
 function Myworkouts() {
   return (
-    <div>Myworkouts</div>
+    <Fragment>
+      <Header />
+        <div>Myworkouts test</div>
+      <Footer />
+    </Fragment>
   )
 }
 
