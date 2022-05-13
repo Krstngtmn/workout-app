@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "../styles/LoginView.scss";
+import "../styles/index.scss";
 
 const LoginView = ({ Login, error }) => {
   const [details, setDetails] = useState({
