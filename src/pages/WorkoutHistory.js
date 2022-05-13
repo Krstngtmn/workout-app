@@ -1,7 +1,4 @@
 import { Fragment } from "react";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
-import Background from "../components/Background";
 import BiceDB from "../assets/BicepDB.png"
 
 import "../styles/index.scss"
@@ -12,7 +9,6 @@ function WorkoutHistory() {
     
     <div className="App">
       <Fragment>
-        <Header />
           <div className="content">
         <h1>Workout history</h1>
         <h3>
@@ -23,8 +19,6 @@ function WorkoutHistory() {
       <button className="btn" type="submit">
         Go to my workouts
       </button>
-        <Background />
-        <Footer />
       </Fragment>
     </div>
   );

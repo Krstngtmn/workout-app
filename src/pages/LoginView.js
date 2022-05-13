@@ -1,8 +1,5 @@
 import { useState, Fragment } from "react";
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-import Button from '../components/Button';
-import Background from '../components/Background';
+
 
 import "../styles/Login.scss";
 
@@ -21,7 +18,6 @@ const LoginView = ({ Login, error }) => {
   return (
     <div className="login-page">
       <Fragment>
-      <Header />
       <h1>Workout App</h1>
       <div className="login-container">
         <form onSubmit={submitHandler}>
@@ -71,7 +67,6 @@ const LoginView = ({ Login, error }) => {
           </button>
         </form>
       </div>
-      <Footer />
       </Fragment>
       </div>
   );

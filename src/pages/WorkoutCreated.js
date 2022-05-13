@@ -1,5 +1,3 @@
-import React from "react";
-
 function WorkoutCreated() {
   return (
     <div className="done-container">

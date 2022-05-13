@@ -16,12 +16,15 @@ import WorkoutConstructor from "./pages/WorkoutConstructor";
 import ExerciseSelector from "./pages/ExerciseSelector";
 import Logout from "./pages/Logout";
 import WorkoutHistory from "./pages/WorkoutHistory";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 import "./styles/index.scss";
 
 const App = () => {
   return (
     <BrowserRouter>
+    <Header />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="register" element={<RegisterView />} />
@@ -39,6 +42,7 @@ const App = () => {
           <Route path="logout" element={<Logout />} />
           <Route path="history" element={<WorkoutHistory />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
       
   );
