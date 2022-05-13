@@ -3,17 +3,3 @@
 .landing-page {
   max-height: 100vh;
 }
-
-.bg-circle {
-  position: absolute;
-  width: 200vh;
-  height: 200vh;
-  left: 0;
-  top: 20vh;
-  background-color: $primary-color;
-  border-radius: 50%;
-  opacity: 0.3;
-  z-index: -1;
-  overflow-x: hidden;
-  overflow-y: hidden;
-}

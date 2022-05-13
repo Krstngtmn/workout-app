@@ -1,11 +1,6 @@
 @import "settings";
 
-.btn {
-  position: absolute;
-  width: 290.35px;
-  left: calc(50% - 290.35px / 2 - 1.82px);
-  top: 72.66%;
-  bottom: 20.69%;
+.btn--primary {
   background-color: $secondary-color;
   color: white;
   border-radius: 38px;
@@ -16,4 +11,19 @@
     drop-shadow(0px 12.5216px 10.0172px rgba(147, 120, 255, 0.035))
     drop-shadow(0px 6.6501px 5.32008px rgba(147, 120, 255, 0.0282725))
     drop-shadow(0px 2.76726px 2.21381px rgba(147, 120, 255, 0.0196802));
+}
+
+.btn--secondary {
+  border: none;
+  color: $black;
+  font-size: $small-font-size;
+  cursor: pointer;
+}
+
+.btn--small {
+  width: 120px;
+}
+
+.btn--large {
+  width: 290.35px;
 }

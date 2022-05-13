@@ -1,6 +1,5 @@
 @import "settings";
 @import "~foundation-sites/scss/foundation";
-@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;300;400;500;600&display=swap");
 @include foundation-global-styles;
 @include foundation-xy-grid-classes;
 @include foundation-typography;
@@ -10,10 +9,17 @@
 @include foundation-flex-classes;
 @include add-foundation-colors;
 
-body {
-  font-family: Work Sans, Helvetica, Arial, sans-serif;
+.content {
   display: block;
-  box-sizing: border-box;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
 }
 
-// Rest //
+h1,
+h3 {
+  text-align: center;
+}
+
+.history-list {
+  height: 100vh;
+}

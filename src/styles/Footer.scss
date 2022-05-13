@@ -1,11 +1,53 @@
 @import "settings";
 
+// .footer {
+//   position: absolute;
+//   bottom: 0;
+//   height: 2rem;
+//   width: 100%;
+//   background-color: grey;
+//   color: $black;
+//   font-size: x-small;
+//   text-align: center;
+// }
+
 .footer {
-  position: absolute;
-  bottom: 0;
-  height: 2rem;
+  display: block;
+  position: relative;
+  padding-top: 5rem;
   width: 100%;
-  background-color: grey;
-  color: $black;
+  color: #999;
+  background-color: none;
+  overflow: hidden;
+}
+
+.footer-container {
+  display: block;
+  align-content: space-around;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+p {
   text-align: center;
+  font-size: 0.9375rem;
+  line-height: 1.3125rem;
+  letter-spacing: 0;
+  margin: 0 0 0.75rem;
+}
+
+// Responsiveness //
+
+@media (min-width: 768px) {
+  .footer-container {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .footer-container {
+    margin-left: 4.375rem;
+    margin-right: 4.375rem;
+  }
 }

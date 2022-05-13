@@ -1,5 +1,10 @@
-import { useState } from "react";
-import "../styles/index.scss";
+import { useState, Fragment } from "react";
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import Button from '../components/Button';
+import Background from '../components/Background';
+
+import "../styles/Login.scss";
 
 const LoginView = ({ Login, error }) => {
   const [details, setDetails] = useState({
@@ -15,11 +20,10 @@ const LoginView = ({ Login, error }) => {
 
   return (
     <div className="login-page">
+      <Fragment>
+      <Header />
       <h1>Workout App</h1>
-      <div className="bg"></div>
-
       <div className="login-container">
-
         <form onSubmit={submitHandler}>
           <div className="form-inner">
             <h3>Welcome back!</h3>
@@ -60,13 +64,15 @@ const LoginView = ({ Login, error }) => {
                 value={details.password}
               />
             </div>
-            <input className="btn" type="submit" value="Login" />
+            <button className="btn--primary" type="submit">Sign in</button>
           </div>
-          <button className="register-link" type="submit">
+          <button className="btn--secondary" type="submit">
             Don't have an account yet? Register here
           </button>
         </form>
       </div>
+      <Footer />
+      </Fragment>
       </div>
   );
 }

@@ -5,15 +5,3 @@
   align-items: center;
   z-index: 1;
 }
-
-.bg-circle {
-  position: absolute;
-  width: 80vh;
-  height: 80vh;
-  left: 16px;
-  top: 144px;
-  background-color: $primary-color;
-  border-radius: 50% 0 0 50%;
-  opacity: 0.3;
-  z-index: -1;
-}

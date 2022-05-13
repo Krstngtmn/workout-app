@@ -11,6 +11,7 @@ function WorkoutConstructor() {
         <Header />
         <div>
           <h1>Create a new workout</h1>
+          <img src="../src/assets/workout.png" alt="" />
         </div>
         <ul>
           <li className="exercise-option">Exercise options from API go here</li>
