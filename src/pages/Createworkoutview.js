@@ -1,9 +1,26 @@
-import React from 'react'
+import { Fragment } from "react";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
-function Createworkoutview() {
+import "../styles/CreateWorkoutView.scss";
+
+function CreateWorkoutView() {
   return (
-    <div>Createworkoutview</div>
-  )
+    <div className="create-view">
+      <Fragment>
+        <Header />
+
+        <h1>
+          First step  of workout creation
+        </h1>
+        <div className="bg-circle"></div>
+        <Footer />
+      </Fragment>
+    </div>
+  );
 }
 
-export default Createworkoutview
+
+
+export default CreateWorkoutView
+

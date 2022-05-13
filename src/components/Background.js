@@ -6,10 +6,8 @@ import "../styles/Background.scss"
 
 function Background() {
   return (
-    <div className="bg-container">
         <div className="bg-circle">
         </div>
-    </div>
   );
 }
 

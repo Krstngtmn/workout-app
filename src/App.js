@@ -5,7 +5,7 @@ import RegisterView from "./pages/RegisterView";
 import LoginView from "./pages/LoginView";
 import Home from "./pages/Home";
 import Account from "./pages/Account";
-import CreateWorkoutview from "./pages/Createworkoutview";
+import CreateWorkoutView from "./pages/CreateWorkoutView";
 import WorkoutCreated from "./pages/WorkoutCreated";
 import WorkoutDone from "./pages/WorkoutDone";
 import WorkoutList from "./pages/WorkoutList";
@@ -16,7 +16,7 @@ import WorkoutConstructor from "./pages/WorkoutConstructor";
 import ExerciseSelector from "./pages/ExerciseSelector";
 import Logout from "./pages/Logout";
 
-import "./styles/App.scss";
+import "./styles/index.scss";
 
 const App = () => {
   return (
@@ -26,7 +26,7 @@ const App = () => {
         <Route path="register" element={<RegisterView />} />
         <Route path="login" element={<LoginView />} />
         <Route path="account" element={<Account />} />
-        <Route path="createnew" element={<CreateWorkoutview />} />
+        <Route path="createnew" element={<CreateWorkoutView />} />
         <Route path="newcreated" element={<WorkoutCreated />} />
         <Route path="welcome" element={<LandingPage />} />
         <Route path="completed" element={<WorkoutDone />} />
