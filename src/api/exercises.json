@@ -1,0 +1,18 @@
+{
+  "data": [
+    {
+      "categoryId": 1,
+      "categoryName": "Abs",
+      "exercises": ["Sit-ups", "Dead bug"]
+    },
+    {
+      "categoryId": 2,
+      "category": "Hamstrings"
+    },
+    {
+      "categoryId": 3,
+      "categoryName": "Upper body pull",
+      "exercises": ["Sit-ups", "Dead bug"]
+    }
+  ]
+}

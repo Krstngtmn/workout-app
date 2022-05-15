@@ -7,7 +7,7 @@ import Account from "./pages/Account";
 import CreateWorkoutView from "./pages/CreateWorkoutView";
 import WorkoutCreated from "./pages/WorkoutCreated";
 import WorkoutDone from "./pages/WorkoutDone";
-import WorkoutList from "./pages/WorkoutList";
+import Workout from "./pages/Workout";
 import NewUser from "./pages/NewUser";
 import LandingPage from "./pages/LandingPage";
 import Dashboard from "./pages/Dashboard";
@@ -34,7 +34,7 @@ const App = () => {
           <Route path="welcome" element={<LandingPage />} />
           <Route path="completed" element={<WorkoutDone />} />
           <Route path="newuser" element={<NewUser />} />
-          <Route path="myworkout" element={<WorkoutList />} />
+          <Route path="workout/:workoutId" element={<Workout />} />
           <Route path="buildselect" element={<ExerciseSelector />} />
           <Route path="dashboard" element={<Dashboard />} />
           <Route path="logout" element={<Logout />} />

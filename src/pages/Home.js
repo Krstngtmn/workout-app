@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import "../styles/Home.scss";
 
@@ -8,8 +9,6 @@ function Home() {
 
   useEffect(() => {
     axios.get(`http://localhost:5001/workouts`).then((res) => {
-      console.log(res.data);
-
       setLoading(false);
       setMyWorkouts(res.data);
     });
@@ -27,7 +26,11 @@ function Home() {
       {!loading &&
         myWorkouts.length > 0 &&
         myWorkouts.map((workout) => {
-          return <div key={workout._id}>{workout.workout_name}</div>;
+          return (
+            <div key={workout._id}>
+              <Link to={`workout/${workout._id}`}>{workout.workout_name}</Link>
+            </div>
+          );
         })}
     </div>
   );
