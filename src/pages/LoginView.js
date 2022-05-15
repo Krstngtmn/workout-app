@@ -1,23 +1,65 @@
-import { useState, Fragment } from "react";
-
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import "../styles/Login.scss";
 
-const LoginView = ({ Login, error }) => {
-  const [details, setDetails] = useState({
-    username: "",
-    email: "",
-    password: "",
-  });
+const LoginView = () => {
+  const navigate = useNavigate();
+
+  const adminUser = {
+    username: "Kris",
+    password: "kriskris",
+    userId: 666,
+  };
+
+  const [user, setUser] = useState({ username: "", password: "", userId: "" });
+  const [details, setDetails] = useState({ username: "", password: "" });
+  const [error, setError] = useState("");
+
+  const refreshFields = () => {
+    setError("Details do not match, try again");
+    setTimeout(() => {
+      setError("");
+      setDetails({ username: "", password: "" });
+    }, 2000);
+  };
+
+  const Login = (details) => {
+    if (
+      details.username == adminUser.username &&
+      details.password == adminUser.password
+    ) {
+      console.log("Logged in");
+      setUser({
+        username: details.username,
+        password: details.password,
+        userId: adminUser.userId,
+      });
+
+      localStorage.setItem("isLoggedIn", true);
+      localStorage.setItem("userInfo", adminUser.userId);
+      navigate("/", { replace: true });
+    } else {
+      refreshFields();
+    }
+  };
+
+  const Logout = () => {
+    setUser({ username: "", password: "", userId: "" });
+    console.log("Logout");
+  };
 
   const submitHandler = (e) => {
     e.preventDefault();
     Login(details);
   };
 
+  useEffect(() => {
+    console.log(user);
+  }, [user]);
+
   return (
     <div className="login-page">
-      <Fragment>
       <h1>Workout App</h1>
       <div className="login-container">
         <form onSubmit={submitHandler}>
@@ -37,18 +79,6 @@ const LoginView = ({ Login, error }) => {
               />
             </div>
             <div className="form-group">
-              <label htmlFor="email">Email</label>
-              <input
-                type="email"
-                name="email"
-                id="email"
-                onChange={(e) =>
-                  setDetails({ ...details, email: e.target.value })
-                }
-                value={details.email}
-              />
-            </div>
-            <div className="form-group">
               <label htmlFor="password">Password</label>
               <input
                 type="password"
@@ -60,16 +90,74 @@ const LoginView = ({ Login, error }) => {
                 value={details.password}
               />
             </div>
-            <button className="btn--primary" type="submit">Sign in</button>
+            <button className="btn--primary" type="submit">
+              Sign in
+            </button>
           </div>
           <button className="btn--secondary" type="submit">
             Don't have an account yet? Register here
           </button>
         </form>
       </div>
-      </Fragment>
-      </div>
+    </div>
   );
-}
+};
 
 export default LoginView;
+
+//   const adminUser = {
+//     username: "Kris",
+//     email: "kris@kris.com",
+//     password: "kriskris",
+//   };
+//   const [user, setUser] = useState({ username: "", email: "" });
+//   const [error, setError] = useState("");
+
+//   const Login = (details) => {
+//     console.log(details);
+
+//     function refreshFields() {
+//       setTimeout(() => setError("Details do not match, try again"), 5000);
+//       window.location.reload(false);
+//       setError("Details do not match, try again");
+//     }
+
+//     if (
+//       details.username == adminUser.username &&
+//       details.password == adminUser.password
+//     ) {
+//       console.log("Logged in");
+//       setUser({
+//         username: details.username,
+//         password: details.password,
+//       });
+//     } else {
+//       refreshFields();
+//     }
+//   };
+
+//   const Logout = () => {
+//     setUser({ username: "", email: "", password: "" });
+//     console.log("Logout");
+//   };
+
+//   return (
+//     <div className="App">
+//       <header className="App-header">
+//         <Menu />
+//       </header>
+//       {user.email != "" ? (
+//         <div className="welcome">
+//           <h2>
+//             Welcome, <span>{user.username}</span>
+//           </h2>
+//           <button className="btn" onClick={Logout}>
+//             Logout
+//           </button>
+//         </div>
+//       ) : (
+//         <Loginview Login={Login} error={error} />
+//       )}
+//     </div>
+//   );
+// }

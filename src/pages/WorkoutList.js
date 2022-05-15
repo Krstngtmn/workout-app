@@ -1,23 +1,26 @@
-import { Fragment } from 'react';
+import { useContext, Fragment } from "react";
+import WorkoutItem from "../components/WorkoutItem";
+import ExerciseContext from "../components/ExerciseContext";
 
-import "../styles/WorkoutList.scss";
+import "../styles/WorkoutItem.scss";
 
-function WorkoutList() {
+const WorkoutList = () => {
+  const { items } = useContext(ExerciseContext);
+  console.log(items);
+
   return (
     <Fragment>
-      <h1>This is the home page if you're logged in and have workouts. See all workouts created.</h1>
-      <div className='exercise-list'>
-        <ul className="ex-list">
-          <li className="ex-item">Api list items appear here</li>
-          <li className="ex-item">Api list items appear here</li>
-          <li className="ex-item">Api list items appear here</li>
-          <li className="ex-item">Api list items appear here</li>
-        </ul>
+      <h1>Workout</h1>
+      <div className="workout-list">
+        {items.map((exercise) => (
+          <div>
+            <h2>{items.name}</h2>
+          </div>
+        ))}
       </div>
       <input className="btn" type="submit" value="Finish workout" />
     </Fragment>
-  )
-}
+  );
+};
 
-export default WorkoutList
-
+export default WorkoutList;

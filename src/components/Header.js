@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import BiceDB from "../assets/BicepDB.png";
-import Button from '../components/Button';
 import "../styles/Header.scss";
 
 function Header() {
@@ -17,20 +16,21 @@ function Header() {
     } else {
       setButton(true);
     }
-  }
+  };
 
   useEffect(() => {
     showButton();
   }, []);
 
-  window.addEventListener('resize', showButton);
+  window.addEventListener("resize", showButton);
 
   return (
     <div className="header">
-      <div
-        className="nav-wrapper">
-          <Link to="/" className="navbar-logo"><img className="logo" src={BiceDB} /></Link>
-          <div className="menu-icon" onClick={handleClick}>
+      <div className="nav-wrapper">
+        <Link to="/" className="navbar-logo">
+          <img className="logo" src={BiceDB} />
+        </Link>
+        <div className="menu-icon" onClick={handleClick}>
           <i className={click ? "fas fa-times" : "fas fa-bars"} />
         </div>
         <ul className={click ? "nav-menu active" : "nav-menu"}>
@@ -40,7 +40,11 @@ function Header() {
             </Link>
           </li>
           <li className="nav-item">
-            <Link to="/build" className="nav-links" onClick={closeMobileMenu}>
+            <Link
+              to="/createnew"
+              className="nav-links"
+              onClick={closeMobileMenu}
+            >
               Create workout
             </Link>
           </li>
