@@ -1,4 +1,5 @@
 import { Fragment, useEffect, useState } from "react";
+import exercisesJSON from "../api/exercises.json";
 
 import "../styles/CreateWorkoutView.scss";
 
@@ -9,15 +10,19 @@ const CreateWorkoutView = () => {
   const [addExercisesView, setAddExercisesView] = useState(false);
 
   const [selectedCategory, setSelectedCategory] = useState(null);
+  const [selectedCategoryId, setSelectedCategoryId] = useState(null);
   const [selectedExercises, setSelectedExercises] = useState([]);
 
-  const exerciseCats = [
-    { name: "Upper body" },
-    { name: "Legs" },
-    { name: "Abs" },
-    { name: "Cardio" },
-    { name: "Custom" },
-  ];
+  // const exerciseCats = [
+  //   { name: "Upper body: push" },
+  //   { name: "Upper body: pull" },
+  //   { name: "Legs: hamstrings" },
+  //   { name: "Legs: quads" },
+  //   { name: "Abs" },
+  //   { name: "Cardio" },
+  //   { name: "Calisthenics" },
+  //   { name: "Custom" },
+  // ];
 
   const exercisesList = [
     { name: "Glute bridges" },
@@ -27,11 +32,12 @@ const CreateWorkoutView = () => {
     { name: "Military press" },
   ];
 
-  const goToNameView = (e) => {
+  const goToNameView = (name, id) => {
     setCategorySelectionView(false);
     setAddNameView(true);
 
-    setSelectedCategory(e.target.innerText);
+    setSelectedCategory(name);
+    setSelectedCategoryId(id);
   };
 
   const goToAddExercisesView = () => {
@@ -68,13 +74,9 @@ const CreateWorkoutView = () => {
             to write your own exercise.{" "}
           </h4>
 
-          <h5 className="cell">
-            Needs API to be called into different category divs
-          </h5>
-
           <div className="cell">
             <div className="grid-x grid-margin-x">
-              {exerciseCats.map((exerciseCat) => {
+              {/* {exerciseCats.map((exerciseCat) => {
                 return (
                   <button
                     onClick={goToNameView}
@@ -82,6 +84,22 @@ const CreateWorkoutView = () => {
                     key={exerciseCat.name}
                   >
                     {exerciseCat.name}
+                  </button>
+                );
+              })} */}
+              {exercisesJSON.data.map((exerciseCat) => {
+                return (
+                  <button
+                    onClick={() =>
+                      goToNameView(
+                        exerciseCat.categoryName,
+                        exerciseCat.categoryId
+                      )
+                    }
+                    className="cell small-12 medium-6 btn--primary btn--small"
+                    key={exerciseCat.categoryName}
+                  >
+                    {exerciseCat.categoryName}
                   </button>
                 );
               })}
@@ -115,7 +133,14 @@ const CreateWorkoutView = () => {
         <div className="grid-x">
           {selectedExercises.length > 0 &&
             selectedExercises.map((exercise, i) => {
-              return <div key={exercise.name + i}>{exercise.name}</div>;
+              return (
+                <div
+                  className="cell shrink btn--primary btn--large"
+                  key={exercise.name + i}
+                >
+                  {exercise.name}
+                </div>
+              );
             })}
 
           <div className="cell text-center">
@@ -137,17 +162,19 @@ const CreateWorkoutView = () => {
 
       {addExercisesView && (
         <div className="grid-x">
-          {exercisesList.map((exerciseCat) => {
-            return (
-              <button
-                onClick={() => addToSelectedExercises(exerciseCat.name)}
-                className="cell small-12 medium-6 btn--primary btn--small"
-                key={exerciseCat.name}
-              >
-                {exerciseCat.name}
-              </button>
-            );
-          })}
+          {exercisesJSON.data
+            .find((category) => category.categoryId === selectedCategoryId)
+            .exercises.map((exerciseCat) => {
+              return (
+                <button
+                  onClick={() => addToSelectedExercises(exerciseCat)}
+                  className="cell small-12 medium-6 btn--primary btn--small"
+                  key={exerciseCat}
+                >
+                  {exerciseCat}
+                </button>
+              );
+            })}
         </div>
       )}
     </Fragment>

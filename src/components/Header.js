@@ -62,6 +62,11 @@ function Header() {
               Account
             </Link>
           </li>
+          <li className="nav-item">
+            <Link to="/history" className="nav-links" onClick={closeMobileMenu}>
+              Workout history
+            </Link>
+          </li>
           <li>
             <Link to="/logout" className="nav-links" onClick={closeMobileMenu}>
               Sign out

@@ -2,7 +2,7 @@
   "data": [
     {
       "categoryId": 1,
-      "category": "Hamstrings",
+      "categoryName": "Hamstrings",
       "exercises": [
         "Romanian Deadlift",
         "DB Romanian Deadlift",
@@ -46,7 +46,6 @@
       "categoryId": 3,
       "categoryName": "Upper body pull",
       "exercises": [
-        "",
         "Farmer's carry",
         "Single DB farmer's carry",
         "Sandbag carry"
@@ -64,8 +63,7 @@
         "Sit-ups",
         "Dead bug",
         "Lying leg raises",
-        "Hanging leg raises",
-        ""
+        "Hanging leg raises"
       ]
     },
     {

@@ -4,6 +4,9 @@
   background-color: $secondary-color;
   color: white;
   border-radius: 38px;
+  padding: rem-calc(20 20);
+  text-align: center;
+  margin-bottom: rem-calc(10);
 
   filter: drop-shadow(0px 100px 80px rgba(147, 120, 255, 0.07))
     drop-shadow(0px 41.7776px 33.4221px rgba(147, 120, 255, 0.0503198))
@@ -21,11 +24,9 @@
 }
 
 .btn--small {
-  height: 60px;
-  width: 120px;
+  min-width: 120px;
 }
 
 .btn--large {
-  height: 60px;
-  width: 290.35px;
+  min-width: 290.35px;
 }

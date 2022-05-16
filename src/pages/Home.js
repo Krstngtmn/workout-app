@@ -15,20 +15,22 @@ function Home() {
   }, []);
 
   return (
-    <div className="content">
-      <h1>
+    <div className="grid-x align-center content">
+      <h2 className="cell text-center">
         This is the home page if you're logged in and have workouts. See all
         workouts created.
-      </h1>
+      </h2>
 
-      {loading && <div>Loading</div>}
+      {loading && <div className="cell shrink">Loading</div>}
 
       {!loading &&
         myWorkouts.length > 0 &&
         myWorkouts.map((workout) => {
           return (
-            <div key={workout._id}>
-              <Link to={`workout/${workout._id}`}>{workout.workout_name}</Link>
+            <div className="cell" key={workout._id}>
+              <Link to={`workout/${workout._id}`}>
+                <h4>{workout.workout_name}</h4>
+              </Link>
             </div>
           );
         })}
