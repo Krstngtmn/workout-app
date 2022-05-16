@@ -22,9 +22,9 @@ const CreateWorkoutView = () => {
   const exercisesList = [
     { name: "Glute bridges" },
     { name: "10min run" },
-    { name: "Poop" },
-    { name: "Goop" },
-    { name: "Slopo" },
+    { name: "Leg press" },
+    { name: "Lat pulldown" },
+    { name: "Military press" },
   ];
 
   const goToNameView = (e) => {

@@ -8,10 +8,8 @@ import CreateWorkoutView from "./pages/CreateWorkoutView";
 import WorkoutCreated from "./pages/WorkoutCreated";
 import WorkoutDone from "./pages/WorkoutDone";
 import Workout from "./pages/Workout";
-import NewUser from "./pages/NewUser";
 import LandingPage from "./pages/LandingPage";
 import Dashboard from "./pages/Dashboard";
-import ExerciseSelector from "./pages/ExerciseSelector";
 import Logout from "./pages/Logout";
 import WorkoutHistory from "./pages/WorkoutHistory";
 import Header from "./components/Header";
@@ -33,9 +31,7 @@ const App = () => {
           <Route path="newcreated" element={<WorkoutCreated />} />
           <Route path="welcome" element={<LandingPage />} />
           <Route path="completed" element={<WorkoutDone />} />
-          <Route path="newuser" element={<NewUser />} />
           <Route path="workout/:workoutId" element={<Workout />} />
-          <Route path="buildselect" element={<ExerciseSelector />} />
           <Route path="dashboard" element={<Dashboard />} />
           <Route path="logout" element={<Logout />} />
           <Route path="history" element={<WorkoutHistory />} />
