@@ -37,7 +37,7 @@ const LoginView = () => {
       });
 
       localStorage.setItem("isLoggedIn", true);
-      localStorage.setItem("userInfo", adminUser.userId);
+      localStorage.setItem("userId", adminUser.userId);
       navigate("/", { replace: true });
     } else {
       refreshFields();

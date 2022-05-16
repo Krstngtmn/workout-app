@@ -1,19 +1,43 @@
 import { useEffect, useState } from "react";
 
-const WorkoutExercise = ({ exerciseInfo }) => {
-  const [weight, setWeight] = useState(exerciseInfo.weight);
-  const [sets, setSets] = useState(exerciseInfo.sets);
-  const [reps, setReps] = useState(exerciseInfo.reps);
+const WorkoutExercise = ({
+  exerciseInfo,
+  exercises,
+  setExercises,
+  exercisePosition,
+}) => {
+  const handleWeightChange = (e) => {
+    const newExercises = [...exercises];
+    newExercises[exercisePosition].weight = parseInt(e.target.value);
+    setExercises(newExercises);
+  };
 
-  console.log(exerciseInfo);
+  const handleSetsChange = (e) => {
+    const newExercises = [...exercises];
+    newExercises[exercisePosition].sets = parseInt(e.target.value);
+    setExercises(newExercises);
+  };
+
+  const handleRepsChange = (e) => {
+    const newExercises = [...exercises];
+    newExercises[exercisePosition].reps = parseInt(e.target.value);
+    setExercises(newExercises);
+  };
 
   return (
     <div className="accordion-item" data-accordion-item>
       <a href="#" className="grid-x accordion-title">
         <h1 className="cell auto">{exerciseInfo.name}</h1>
-        <div className="cell auto">{weight}</div>
-        <div className="cell auto">{sets}</div>
-        <div className="cell auto">{reps}</div>
+
+        {exerciseInfo.weight > 0 && (
+          <div className="cell auto">{exerciseInfo.weight}</div>
+        )}
+        {exerciseInfo.sets > 0 && (
+          <div className="cell auto">{exerciseInfo.sets}</div>
+        )}
+        {exerciseInfo.reps > 0 && (
+          <div className="cell auto">{exerciseInfo.reps}</div>
+        )}
       </a>
 
       <div className="grid-x accordion-content" data-tab-content>
@@ -21,11 +45,11 @@ const WorkoutExercise = ({ exerciseInfo }) => {
           <h4>Weight</h4>
           <input
             type="range"
-            min="1"
+            min="0"
             max="300"
             step="0.5"
-            defaultValue={weight}
-            onChange={(e) => setWeight(e.target.value)}
+            defaultValue={exerciseInfo.weight}
+            onChange={handleWeightChange}
             className="slider"
           />
         </div>
@@ -33,11 +57,11 @@ const WorkoutExercise = ({ exerciseInfo }) => {
           <h4>Sets</h4>
           <input
             type="range"
-            min="1"
+            min="0"
             max="20"
             step="1"
-            defaultValue={sets}
-            onChange={(e) => setSets(e.target.value)}
+            defaultValue={exerciseInfo.sets}
+            onChange={handleSetsChange}
             className="slider"
           />
         </div>
@@ -45,11 +69,11 @@ const WorkoutExercise = ({ exerciseInfo }) => {
           <h4>Reps</h4>
           <input
             type="range"
-            min="1"
+            min="0"
             max="100"
             step="1"
-            defaultValue={reps}
-            onChange={(e) => setReps(e.target.value)}
+            defaultValue={exerciseInfo.reps}
+            onChange={handleRepsChange}
             className="slider"
           />
         </div>

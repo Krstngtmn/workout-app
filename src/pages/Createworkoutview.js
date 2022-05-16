@@ -1,36 +1,22 @@
 import { Fragment, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 import exercisesJSON from "../api/exercises.json";
 
 import "../styles/CreateWorkoutView.scss";
+import Done from "../components/Done";
 
 const CreateWorkoutView = () => {
+  const navigate = useNavigate();
   const [categorySelectionView, setCategorySelectionView] = useState(true);
   const [addNameView, setAddNameView] = useState(false);
   const [selectedExercisesView, setSelectedExercisesView] = useState(false);
   const [addExercisesView, setAddExercisesView] = useState(false);
+  const [doneView, setDoneView] = useState(false);
 
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [selectedCategoryId, setSelectedCategoryId] = useState(null);
   const [selectedExercises, setSelectedExercises] = useState([]);
-
-  // const exerciseCats = [
-  //   { name: "Upper body: push" },
-  //   { name: "Upper body: pull" },
-  //   { name: "Legs: hamstrings" },
-  //   { name: "Legs: quads" },
-  //   { name: "Abs" },
-  //   { name: "Cardio" },
-  //   { name: "Calisthenics" },
-  //   { name: "Custom" },
-  // ];
-
-  const exercisesList = [
-    { name: "Glute bridges" },
-    { name: "10min run" },
-    { name: "Leg press" },
-    { name: "Lat pulldown" },
-    { name: "Military press" },
-  ];
 
   const goToNameView = (name, id) => {
     setCategorySelectionView(false);
@@ -47,13 +33,32 @@ const CreateWorkoutView = () => {
   };
 
   const addToSelectedExercises = (newExercise) => {
-    setSelectedExercises([...selectedExercises, { name: newExercise }]);
+    setSelectedExercises([
+      ...selectedExercises,
+      { name: newExercise, weight: 0, sets: 0, reps: 0 },
+    ]);
   };
 
   const saveWorkout = () => {
-    console.log("Name: " + selectedCategory);
-    console.log(selectedExercises);
-    console.log(localStorage.getItem("userInfo"));
+    axios
+      .post(`http://localhost:5001/workout/add`, {
+        user_id: parseInt(localStorage.getItem("userId")),
+        workout_name: selectedCategory,
+        exercises: selectedExercises,
+        finished_workouts: [],
+      })
+      .then(function (response) {
+        // console.log(response);
+        setSelectedExercisesView(false);
+        setDoneView(true);
+
+        setTimeout(() => {
+          navigate("/", { replace: true });
+        }, 3000);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   };
 
   useEffect(() => {
@@ -76,17 +81,6 @@ const CreateWorkoutView = () => {
 
           <div className="cell">
             <div className="grid-x grid-margin-x">
-              {/* {exerciseCats.map((exerciseCat) => {
-                return (
-                  <button
-                    onClick={goToNameView}
-                    className="cell small-12 medium-6 btn--primary btn--small"
-                    key={exerciseCat.name}
-                  >
-                    {exerciseCat.name}
-                  </button>
-                );
-              })} */}
               {exercisesJSON.data.map((exerciseCat) => {
                 return (
                   <button
@@ -177,6 +171,8 @@ const CreateWorkoutView = () => {
             })}
         </div>
       )}
+
+      {doneView && <Done workoutName={selectedCategory} />}
     </Fragment>
   );
 };
