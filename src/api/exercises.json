@@ -2,17 +2,109 @@
   "data": [
     {
       "categoryId": 1,
-      "categoryName": "Abs",
-      "exercises": ["Sit-ups", "Dead bug"]
+      "category": "Hamstrings",
+      "exercises": [
+        "Romanian Deadlift",
+        "DB Romanian Deadlift",
+        "Sumo deadlift",
+        "Straight-leg deadlift",
+        "Hip thrust",
+        "Hyperextension",
+        "Leg curl",
+        "Abductor",
+        "Adductor",
+        "Glute bridge",
+        "Calf raises",
+        "Kettlebell swing",
+        "Single leg deadlift"
+      ]
     },
     {
       "categoryId": 2,
-      "category": "Hamstrings"
+      "categoryName": "Quads",
+      "exercises": [
+        "Barbell Squat",
+        "Goblet squat",
+        "Bodyweight squat",
+        "Walking lunges",
+        "Cossack Squat",
+        "Front squat",
+        "Pistol squat",
+        "Hack Squat",
+        "DB Split squat",
+        "BB Split squat",
+        "Step-up",
+        "Bulgarian split squats",
+        "Box jump",
+        "Stepback lunges",
+        "Leg press",
+        "Leg extension",
+        "Smith lunges"
+      ]
     },
     {
       "categoryId": 3,
       "categoryName": "Upper body pull",
+      "exercises": [
+        "",
+        "Farmer's carry",
+        "Single DB farmer's carry",
+        "Sandbag carry"
+      ]
+    },
+    {
+      "categoryId": 4,
+      "categoryName": "Upper body push",
       "exercises": ["Sit-ups", "Dead bug"]
+    },
+    {
+      "categoryId": 5,
+      "categoryName": "Abs",
+      "exercises": [
+        "Sit-ups",
+        "Dead bug",
+        "Lying leg raises",
+        "Hanging leg raises",
+        ""
+      ]
+    },
+    {
+      "categoryId": 6,
+      "categoryName": "Cardio",
+      "exercises": [
+        "Walk",
+        "Run",
+        "Sprint",
+        "Rowing machine",
+        "Assault bike",
+        "Ladder mill",
+        "Elliptical",
+        "Cycling",
+        "Ski machine",
+        "Swim"
+      ]
+    },
+    {
+      "categoryId": 7,
+      "categoryName": "Calisthenics",
+      "exercises": [
+        "Burpees",
+        "Pushups",
+        "Jumping jacks",
+        "Mountain climbers",
+        "Walking lunges",
+        "Jump rope",
+        "Bear crawl",
+        "Box stepups",
+        "Medicine ball slam",
+        "Vertical jump",
+        "Long jump",
+        "Sled push",
+        "Sled pull",
+        "Pullups",
+        "Dips",
+        "Hanging leg raises"
+      ]
     }
   ]
 }
