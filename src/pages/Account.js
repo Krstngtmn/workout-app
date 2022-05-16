@@ -1,44 +1,28 @@
-import { Fragment, useState } from "react";
+import { Fragment } from "react";
+import { Link } from "react-router-dom";
 
 const Account = () => {
   const adminUser = {
     username: "Kris",
     email: "kris@kris.com",
     password: "kriskris",
+    userId: 666,
   };
-  const [user, setUser] = useState({ username: "", email: "" });
-  const [error, setError] = useState("");
-
-  if (
-    details.username == adminUser.username &&
-    details.password == adminUser.password
-  ) {
-    setUser({
-      username: details.username,
-      password: details.password,
-    });
-  } else {
-    refreshFields();
-  }
 
   return (
     <Fragment>
       <div>
-        {user.email != "" ? (
-          <div className="welcome">
-            <h2>
-              Welcome, <span>{user.username}</span>
-            </h2>
-            <button className="btn" onClick={Logout}>
-              Logout
-            </button>
-          </div>
-        ) : (
-          <Loginview Login={Login} error={error} />
-        )}
+        <div className="grid-x align-center">
+          <h2>
+            Welcome, <span>{adminUser.username}</span>
+          </h2>
+        </div>
         <h3>Dark mode/light mode</h3>
         <h3>Change email</h3>
         <h3>Change password</h3>
+        <Link to="/logout" className="btn--primary btn--small">
+          Sign out
+        </Link>
       </div>
     </Fragment>
   );

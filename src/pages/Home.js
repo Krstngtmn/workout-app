@@ -1,7 +1,9 @@
-import { useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import "../styles/Home.scss";
+import userEvent from "@testing-library/user-event";
+import UserName from "../components/UserName";
 
 function Home() {
   const [loading, setLoading] = useState(true);
@@ -15,26 +17,24 @@ function Home() {
   }, []);
 
   return (
-    <div className="grid-x align-center content">
-      <h2 className="cell text-center">
-        This is the home page if you're logged in and have workouts. See all
-        workouts created.
-      </h2>
+    <Fragment>
+      <UserName />
+      <div className="grid-x align-center content">
+        {loading && <div className="cell shrink">Loading</div>}
 
-      {loading && <div className="cell shrink">Loading</div>}
-
-      {!loading &&
-        myWorkouts.length > 0 &&
-        myWorkouts.map((workout) => {
-          return (
-            <div className="cell" key={workout._id}>
-              <Link to={`workout/${workout._id}`}>
-                <h4>{workout.workout_name}</h4>
-              </Link>
-            </div>
-          );
-        })}
-    </div>
+        {!loading &&
+          myWorkouts.length > 0 &&
+          myWorkouts.map((workout) => {
+            return (
+              <div className="cell" key={workout._id}>
+                <Link to={`workout/${workout._id}`}>
+                  <h4>{workout.workout_name}</h4>
+                </Link>
+              </div>
+            );
+          })}
+      </div>
+    </Fragment>
   );
 }
 

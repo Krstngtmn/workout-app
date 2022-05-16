@@ -5,8 +5,6 @@ import LoginView from "./pages/LoginView";
 import Home from "./pages/Home";
 import Account from "./pages/Account";
 import CreateWorkoutView from "./pages/CreateWorkoutView";
-import WorkoutCreated from "./pages/WorkoutCreated";
-import WorkoutDone from "./pages/WorkoutDone";
 import Workout from "./pages/Workout";
 import LandingPage from "./pages/LandingPage";
 import Dashboard from "./pages/Dashboard";
@@ -28,9 +26,7 @@ const App = () => {
           <Route path="login" element={<LoginView />} />
           <Route path="account" element={<Account />} />
           <Route path="createnew" element={<CreateWorkoutView />} />
-          <Route path="newcreated" element={<WorkoutCreated />} />
           <Route path="welcome" element={<LandingPage />} />
-          <Route path="completed" element={<WorkoutDone />} />
           <Route path="workout/:workoutId" element={<Workout />} />
           <Route path="dashboard" element={<Dashboard />} />
           <Route path="logout" element={<Logout />} />

@@ -22,10 +22,34 @@ const WorkoutExercise = ({ exerciseInfo }) => {
           <input
             type="range"
             min="1"
-            max="100"
+            max="300"
             step="0.5"
             defaultValue={weight}
             onChange={(e) => setWeight(e.target.value)}
+            className="slider"
+          />
+        </div>
+        <div className="cell">
+          <h4>Sets</h4>
+          <input
+            type="range"
+            min="1"
+            max="20"
+            step="1"
+            defaultValue={sets}
+            onChange={(e) => setSets(e.target.value)}
+            className="slider"
+          />
+        </div>
+        <div className="cell">
+          <h4>Reps</h4>
+          <input
+            type="range"
+            min="1"
+            max="100"
+            step="1"
+            defaultValue={reps}
+            onChange={(e) => setReps(e.target.value)}
             className="slider"
           />
         </div>

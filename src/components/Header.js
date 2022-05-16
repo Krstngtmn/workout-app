@@ -45,7 +45,7 @@ function Header() {
               className="nav-links"
               onClick={closeMobileMenu}
             >
-              Create workout
+              Create a workout
             </Link>
           </li>
           <li className="nav-item">
