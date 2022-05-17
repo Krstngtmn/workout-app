@@ -42,7 +42,7 @@ const Workout = () => {
     const changedWorkoutJSON = JSON.stringify(changedWorkout);
 
     axios
-      .post(`https://workout-db-olive.vercel.app/api/addworkout?workoutId=${workoutId}&changedWorkout=${changedWorkoutJSON}`)
+      .post(`https://workout-db-olive.vercel.app/api/changeworkout?workoutId=${workoutId}&changedWorkout=${changedWorkoutJSON}`)
       .then(function (response) {
         // console.log(response);
         setWorkoutView(false);
