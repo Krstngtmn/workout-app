@@ -41,7 +41,7 @@ const CreateWorkoutView = () => {
 
   const saveWorkout = () => {
     axios
-      .post(`http://localhost:5001/workout/add`, {
+      .post(`https://workout-db-olive.vercel.app/api/workout-add`, {
         user_id: parseInt(localStorage.getItem("userId")),
         workout_name: selectedCategory,
         exercises: selectedExercises,
