@@ -16,7 +16,7 @@ const Workout = () => {
   const [doneView, setDoneView] = useState(false);
 
   useEffect(() => {
-    axios.get(`http://localhost:5001/workout/${workoutId}`).then((res) => {
+    axios.get(`https://workout-db-olive.vercel.app/api/workout?workoutId=${workoutId}`).then((res) => {
       setWorkoutInfo(res.data);
     });
   }, []);
