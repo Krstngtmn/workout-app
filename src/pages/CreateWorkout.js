@@ -52,7 +52,7 @@ const CreateWorkoutView = () => {
     axios
       .post(`https://workout-db-olive.vercel.app/api/addworkout?newWorkout=${newWorkoutJSON}`)
       .then(function (response) {
-        console.log(response);
+        // console.log(response);
         setSelectedExercisesView(false);
         setWorkoutCreatedView(true);
 
