@@ -148,14 +148,19 @@ p {
 * Workout session page
 */
 
-.stats-title {
-  color: $secondary-color;
-  font-size: rem-calc(10);
-  font-weight: 700;
-  text-transform: uppercase;
+.table-names {
+  margin-top: rem-calc(20);
+
+  .stats-title {
+    color: $secondary-color;
+    font-size: rem-calc(10);
+    font-weight: 700;
+    text-transform: uppercase;
+  }
 }
 
 .accordion {
+  margin-bottom: rem-calc(80);
   background-color: transparent;
 
   .accordion-item {
