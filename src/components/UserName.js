@@ -3,9 +3,6 @@ import { Fragment } from "react";
 const userName = () => {
   const adminUser = {
     username: "Kris",
-    email: "kris@kris.com",
-    password: "kriskris",
-    userId: 666,
   };
 
   return (

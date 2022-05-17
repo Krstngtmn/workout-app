@@ -20,8 +20,16 @@ body {
   }
 }
 
+p {
+  font-size: rem-calc(18);
+}
+
 .app {
   padding-top: rem-calc(80);
+}
+
+.content {
+  padding: rem-calc(0 30);
 }
 
 .button {
@@ -76,3 +84,201 @@ body {
     }
   }
 }
+
+.page-title {
+  padding: rem-calc(40 0);
+  color: $secondary-color;
+
+  &.has-subtitle {
+    padding-bottom: 0;
+  }
+}
+
+.subtitle {
+  margin-bottom: rem-calc(80);
+}
+
+.workout-item {
+  margin-bottom: rem-calc(15);
+  margin-left: rem-calc(-80);
+  padding: rem-calc(20 30);
+  border: rem-calc(2) solid $secondary-color;
+  border-radius: rem-calc(100);
+  background-color: $secondary-color;
+  color: $white;
+  font-size: rem-calc(18);
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out;
+
+  @include breakpoint(medium) {
+    padding: rem-calc(30 40);
+    font-size: rem-calc(22);
+  }
+
+  a {
+    color: $white;
+    text-decoration: none;
+    transition: color 0.25s ease-in-out;
+  }
+
+  &:hover {
+    background-color: transparent;
+    color: $secondary-color;
+
+    a {
+      color: $secondary-color;
+    }
+  }
+
+  &.odd {
+    margin-left: rem-calc(80);
+    background-color: $primary-color;
+    border-color: $primary-color;
+
+    &:hover {
+      background-color: transparent;
+      color: $primary-color;
+    }
+  }
+}
+
+
+/*
+* Workout session page
+*/
+
+.stats-title {
+  color: $secondary-color;
+  font-size: rem-calc(10);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.accordion {
+  background-color: transparent;
+
+  .accordion-item {
+    border-bottom: rem-calc(1) solid $light-gray;
+
+    .accordion-title {
+      display: flex;
+      padding: rem-calc(20 0);
+      border: none;
+      cursor: pointer;
+
+      &::before {
+        content: "";
+        display: inline-block;
+        border: solid $secondary-color;
+        border-width: rem-calc(0 1 1 0);
+        margin-top: rem-calc(-6);
+        padding: rem-calc(4);
+        transform: rotate(45deg);
+        transition: transform 0.3s ease-in-out;
+      }
+
+      h1 {
+        margin: 0;
+        color: $black;
+        font-size: rem-calc(16);
+        text-align: left;
+      }
+
+      .stats {
+        color: $black;
+        font-size: rem-calc(16);
+        font-weight: 900;
+
+        span {
+          display: inline-block;
+          margin-left: rem-calc(3);
+          font-size: rem-calc(11);
+        }
+      }
+
+      &:hover,
+      &:focus {
+        background-color: transparent;
+      }
+    }
+
+    .accordion-content {
+      padding: rem-calc(10 60 40);
+      border: none;
+
+      h4 {
+        font-size: rem-calc(10);
+        text-align: center;
+        text-transform: uppercase;
+
+        span {
+          display: inline-block;
+          margin-left: rem-calc(12);
+          font-size: rem-calc(20);
+          font-weight: 900;
+          
+          span {
+            margin-left: rem-calc(3);
+            font-size: rem-calc(12);
+          }
+        }
+      }
+
+      .slider-row {
+        margin-bottom: rem-calc(20);
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+
+      .slider-container {
+        width: 100%;
+
+        .slider {
+          appearance: none;
+          width: 100%;
+          height: rem-calc(1);
+          background: $black;
+          outline: none;
+
+          &::-webkit-slider-thumb {
+            appearance: none;
+            width: rem-calc(25);
+            height: rem-calc(25);
+            border: rem-calc(2) solid $white;
+            border-radius: 50%;
+            background: $secondary-color;
+            cursor: pointer;
+          }
+
+          &::-moz-range-thumb {
+            width: rem-calc(25);
+            height: rem-calc(25);
+            border: rem-calc(2) solid $white;
+            border-radius: 50%;
+            background: $secondary-color;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    &.is-active {
+     .accordion-title {
+        &::before {
+          transform: rotate(-135deg);
+        }
+       .stats {
+         display: none;
+       }
+     } 
+    }
+  }
+}
+

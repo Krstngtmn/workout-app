@@ -1,9 +1,8 @@
-import { Fragment, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import "../styles/Home.scss";
-import userEvent from "@testing-library/user-event";
-import UserName from "../components/UserName";
+import PageTitle from "../components/PageTitle";
 
 function Home() {
   const [loading, setLoading] = useState(true);
@@ -17,24 +16,34 @@ function Home() {
   }, []);
 
   return (
-    <Fragment>
-      <UserName />
-      <div className="grid-x align-center content">
-        {loading && <div className="cell shrink">Loading</div>}
+    <div className="grid-x align-center content">
+      <div className="cell text-center">
+        <PageTitle
+          title="My workouts"
+          subtitle="Hey Kris! Choose today's workout."
+        />
+      </div>
+      {loading && <div className="cell shrink">Loading</div>}
 
-        {!loading &&
-          myWorkouts.length > 0 &&
-          myWorkouts.map((workout) => {
-            return (
-              <div className="cell" key={workout._id}>
-                <Link to={`workout/${workout._id}`}>
-                  <h4>{workout.workout_name}</h4>
+      {!loading &&
+        myWorkouts.length > 0 &&
+        myWorkouts.map((workout, i) => {
+          return (
+            <div className="cell" key={workout._id}>
+              <div className="grid-x align-center">
+                <Link
+                  to={`workout/${workout._id}`}
+                  className={`cell small-10 medium-6 large-4 workout-item ${
+                    i % 2 === 0 ? "" : "odd"
+                  }`}
+                >
+                  {workout.workout_name}
                 </Link>
               </div>
-            );
-          })}
-      </div>
-    </Fragment>
+            </div>
+          );
+        })}
+    </div>
   );
 }
 

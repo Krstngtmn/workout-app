@@ -3,8 +3,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import exercisesJSON from "../api/exercises.json";
 
-import "../styles/CreateWorkoutView.scss";
-import Done from "../components/Done";
+import WorkoutCreated from "../components/WorkoutCreated";
 
 const CreateWorkoutView = () => {
   const navigate = useNavigate();
@@ -12,7 +11,7 @@ const CreateWorkoutView = () => {
   const [addNameView, setAddNameView] = useState(false);
   const [selectedExercisesView, setSelectedExercisesView] = useState(false);
   const [addExercisesView, setAddExercisesView] = useState(false);
-  const [doneView, setDoneView] = useState(false);
+  const [addWorkoutCreatedView, setWorkoutCreatedView] = useState(false);
 
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [selectedCategoryId, setSelectedCategoryId] = useState(null);
@@ -50,7 +49,7 @@ const CreateWorkoutView = () => {
       .then(function (response) {
         // console.log(response);
         setSelectedExercisesView(false);
-        setDoneView(true);
+        setWorkoutCreatedView(true);
 
         setTimeout(() => {
           navigate("/", { replace: true });
@@ -172,7 +171,9 @@ const CreateWorkoutView = () => {
         </div>
       )}
 
-      {doneView && <Done workoutName={selectedCategory} />}
+      {addWorkoutCreatedView && (
+        <WorkoutCreated selectedCategory={selectedCategory} />
+      )}
     </Fragment>
   );
 };

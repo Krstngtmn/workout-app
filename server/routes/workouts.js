@@ -61,7 +61,7 @@ workoutRoutes.route("/workout/update/:id").post(function (req, response) {
 });
 
 // // Delete a workout
-// workoutRoutes.route("/:id").delete((req, response) => {
+// workoutRoutes.route("/workout/:id").delete((req, response) => {
 //   let db_connect = dbo.getDb();
 //   let myquery = { _id: ObjectId(req.params.id) };
 //   db_connect.collection("workouts").deleteOne(myquery, function (err, obj) {

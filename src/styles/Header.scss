@@ -80,7 +80,7 @@
 }
 
 .hamburger {
-  padding: rem-calc(15);
+  padding: rem-calc(15 0 15 15);
   display: inline-block;
   cursor: pointer;
   transition-property: opacity, filter;

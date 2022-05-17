@@ -5,8 +5,7 @@ import jQuery from "jquery";
 import { Accordion } from "foundation-sites/js/entries/foundation";
 import WorkoutExercise from "../components/WorkoutExercise";
 import WorkoutDone from "../components/WorkoutDone";
-
-import "../styles/WorkoutItem.scss";
+import PageTitle from "../components/PageTitle";
 
 const Workout = () => {
   const navigate = useNavigate();
@@ -58,8 +57,18 @@ const Workout = () => {
   return (
     <Fragment>
       {workoutView && workoutInfo && (
-        <div className="grid-x">
-          <h1 className="cell">{workoutInfo.workout_name}</h1>
+        <div className="grid-x content">
+          <PageTitle
+          title={workoutInfo.workout_name}
+        />
+          <div className="cell table-names">
+            <div className="grid-x">
+              <div className="cell auto"></div>
+              <h5 className="cell small-2 text-center stats-title">Weight</h5>
+              <h5 className="cell small-2 text-center stats-title">Sets</h5>
+              <h5 className="cell small-2 text-center stats-title">Reps</h5>
+            </div>
+          </div>
 
           <div
             className="cell accordion"
@@ -79,10 +88,7 @@ const Workout = () => {
 
           <div className="cell">
             <div className="grid-x align-center">
-              <button
-                onClick={updateWorkout}
-                className="cell btn--primary btn--large"
-              >
+              <button onClick={updateWorkout} className="cell button">
                 Finish Workout
               </button>
             </div>

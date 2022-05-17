@@ -1,4 +1,4 @@
-const Done = ({ workoutName }) => {
+const WorkoutCreated = ({ workoutName }) => {
   return (
     <div className="done-container">
       <div className="message">
@@ -11,4 +11,4 @@ const Done = ({ workoutName }) => {
   );
 };
 
-export default Done;
+export default WorkoutCreated;

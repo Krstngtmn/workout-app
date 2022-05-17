@@ -79,7 +79,9 @@ function Header() {
             {menuItems.map((menuItem) => {
               return (
                 <li className="cell text-center" key={menuItem.name}>
-                  <Link to={menuItem.link}>{menuItem.name}</Link>
+                  <Link to={menuItem.link} onClick={handleClick}>
+                    {menuItem.name}
+                  </Link>
                 </li>
               );
             })}

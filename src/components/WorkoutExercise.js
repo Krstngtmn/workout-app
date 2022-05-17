@@ -26,56 +26,66 @@ const WorkoutExercise = ({
 
   return (
     <div className="accordion-item" data-accordion-item>
-      <a href="#" className="grid-x accordion-title">
+      <a href="#" className="grid-x align-middle accordion-title">
         <h1 className="cell auto">{exerciseInfo.name}</h1>
-
-        {exerciseInfo.weight > 0 && (
-          <div className="cell auto">{exerciseInfo.weight}</div>
-        )}
-        {exerciseInfo.sets > 0 && (
-          <div className="cell auto">{exerciseInfo.sets}</div>
-        )}
-        {exerciseInfo.reps > 0 && (
-          <div className="cell auto">{exerciseInfo.reps}</div>
-        )}
+        <div className="cell small-2 text-center stats">
+          {exerciseInfo.weight > 0 && exerciseInfo.weight}
+          {exerciseInfo.weight > 0 && <span>KG</span>}
+          </div>
+        <div className="cell small-2 text-center stats">{exerciseInfo.sets > 0 && exerciseInfo.sets}</div>
+        <div className="cell small-2 text-center stats">{exerciseInfo.reps > 0 && exerciseInfo.reps}</div>
       </a>
 
       <div className="grid-x accordion-content" data-tab-content>
-        <div className="cell">
-          <h4>Weight</h4>
-          <input
-            type="range"
-            min="0"
-            max="300"
-            step="0.5"
-            defaultValue={exerciseInfo.weight}
-            onChange={handleWeightChange}
-            className="slider"
-          />
+        <div className="cell slider-row">
+          <h4>Weight
+            <span>{exerciseInfo.weight}
+              <span>KG</span>
+            </span>
+          </h4>
+          <div className="slider-container">
+            <input
+              type="range"
+              min="0"
+              max="300"
+              step="0.5"
+              defaultValue={exerciseInfo.weight}
+              onChange={handleWeightChange}
+              className="slider"
+            />
+          </div>
         </div>
-        <div className="cell">
-          <h4>Sets</h4>
-          <input
-            type="range"
-            min="0"
-            max="20"
-            step="1"
-            defaultValue={exerciseInfo.sets}
-            onChange={handleSetsChange}
-            className="slider"
-          />
+        <div className="cell slider-row">
+          <h4>Sets
+          <span>{exerciseInfo.sets}</span>
+          </h4>
+          <div className="slider-container">
+            <input
+              type="range"
+              min="0"
+              max="20"
+              step="1"
+              defaultValue={exerciseInfo.sets}
+              onChange={handleSetsChange}
+              className="slider"
+            />
+          </div>
         </div>
-        <div className="cell">
-          <h4>Reps</h4>
-          <input
-            type="range"
-            min="0"
-            max="100"
-            step="1"
-            defaultValue={exerciseInfo.reps}
-            onChange={handleRepsChange}
-            className="slider"
-          />
+        <div className="cell slider-row">
+          <h4>Reps
+          <span>{exerciseInfo.reps}</span>
+          </h4>
+          <div className="slider-container">
+            <input
+              type="range"
+              min="0"
+              max="100"
+              step="1"
+              defaultValue={exerciseInfo.reps}
+              onChange={handleRepsChange}
+              className="slider"
+            />
+          </div>
         </div>
       </div>
     </div>
