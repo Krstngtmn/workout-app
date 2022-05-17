@@ -9,7 +9,7 @@ function Home() {
   const [myWorkouts, setMyWorkouts] = useState([]);
 
   useEffect(() => {
-    axios.get(`http://localhost:5001/workouts`).then((res) => {
+    axios.get(`https://workout-db-olive.vercel.app/api/workouts`).then((res) => {
       setLoading(false);
       setMyWorkouts(res.data);
     });
