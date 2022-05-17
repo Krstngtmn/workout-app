@@ -1,12 +1,15 @@
+import PageTitle from "./PageTitle";
+
 const WorkoutDone = () => {
   return (
-    <div className="done-container">
-      <div className="message">
-        <h1>Done!</h1>
-        <h3>You have completed your workout session!</h3>
-      </div>
+    <div className="grid-x align-center content create-view">
+    <div className="cell text-center">
+    <PageTitle
+            title="Done!"
+            subtitle="You have completed your workout session!"
+          />
     </div>
+  </div>
   );
 };
-
 export default WorkoutDone;

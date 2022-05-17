@@ -60,15 +60,14 @@ workoutRoutes.route("/workout/update/:id").post(function (req, response) {
     });
 });
 
-// // Delete a workout
-// workoutRoutes.route("/workout/:id").delete((req, response) => {
-//   let db_connect = dbo.getDb();
-//   let myquery = { _id: ObjectId(req.params.id) };
-//   db_connect.collection("workouts").deleteOne(myquery, function (err, obj) {
-//     if (err) throw err;
-//     console.log("workout deleted");
-//     response.json(obj);
-//   });
-// });
+// Delete a workout
+workoutRoutes.route("/workout/delete/:id").delete((req, response) => {
+  let db_connect = dbo.getDb();
+  let myquery = { _id: ObjectId(req.params.id) };
+  db_connect.collection("workouts").deleteOne(myquery, function (err, obj) {
+    if (err) throw err;
+    response.json(obj);
+  });
+});
 
 module.exports = workoutRoutes;
