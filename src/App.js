@@ -4,7 +4,7 @@ import RegisterView from "./pages/RegisterView";
 import LoginView from "./pages/LoginView";
 import Home from "./pages/Home";
 import Account from "./pages/Account";
-import CreateWorkoutView from "./pages/CreateWorkoutView";
+import CreateWorkout from "./pages/CreateWorkout";
 import Workout from "./pages/Workout";
 import LandingPage from "./pages/LandingPage";
 import Dashboard from "./pages/Dashboard";
@@ -25,7 +25,7 @@ const App = () => {
           <Route path="register" element={<RegisterView />} />
           <Route path="login" element={<LoginView />} />
           <Route path="account" element={<Account />} />
-          <Route path="createnew" element={<CreateWorkoutView />} />
+          <Route path="createnew" element={<CreateWorkout />} />
           <Route path="welcome" element={<LandingPage />} />
           <Route path="workout/:workoutId" element={<Workout />} />
           <Route path="dashboard" element={<Dashboard />} />
