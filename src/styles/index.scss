@@ -10,4 +10,69 @@
 @include foundation-flex-classes;
 @include add-foundation-colors;
 
-// Rest //
+/*
+* Global styles
+*/
+
+body {
+  &.overlay-open {
+    overflow: hidden;
+  }
+}
+
+.app {
+  padding-top: rem-calc(80);
+}
+
+.button {
+  padding: rem-calc(20 40);
+  border: rem-calc(2) solid $secondary-color;
+  border-radius: rem-calc(100);
+  background-color: $secondary-color;
+  color: $white;
+  font-size: rem-calc(18);
+  cursor: pointer;
+  transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out;
+
+  a {
+    color: $white;
+    text-decoration: none;
+    transition: color 0.25s ease-in-out;
+  }
+
+  &:hover {
+    background-color: transparent;
+    color: $secondary-color;
+
+    a {
+      color: $secondary-color;
+    }
+  }
+
+  &--small {
+    padding: rem-calc(12 25);
+  }
+
+  &--x-small {
+    padding: rem-calc(8 15);
+    font-size: rem-calc(16);
+  }
+
+  &--outline {
+    background-color: transparent;
+    color: $secondary-color;
+
+    a {
+      color: $secondary-color;
+    }
+
+    &:hover {
+      background-color: $secondary-color;
+      color: $white;
+
+      a {
+        color: $white;
+      }
+    }
+  }
+}
