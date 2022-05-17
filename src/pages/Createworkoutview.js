@@ -2,6 +2,7 @@ import { Fragment, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import exercisesJSON from "../api/exercises.json";
+import PageTitle from "../components/PageTitle";
 
 import WorkoutCreated from "../components/WorkoutCreated";
 
@@ -70,15 +71,17 @@ const CreateWorkoutView = () => {
   return (
     <Fragment>
       {categorySelectionView && (
-        <div className="grid-x align-center create-view">
-          <h1 className="cell">First step of workout creation</h1>
-          <h4 className="cell large-6">
-            Pick a category and choose your exercises. You can stick to one
-            category or create a custom mix.Choose custom category if you want
-            to write your own exercise.{" "}
-          </h4>
+        <div className="grid-x align-center content create-view">
+          <div className="cell text-center">
+            <PageTitle
+              title="Create a new workout"
+              subtitle="Pick a category and choose your exercises. You can stick to one
+              category or create a custom mix.Choose custom category if you want
+              to write your own exercise."
+            />
+          </div>
 
-          <div className="cell">
+          <div className="cell small-12 medium-10 large-8">
             <div className="grid-x grid-margin-x">
               {exercisesJSON.data.map((exerciseCat) => {
                 return (
@@ -89,7 +92,7 @@ const CreateWorkoutView = () => {
                         exerciseCat.categoryId
                       )
                     }
-                    className="cell small-12 medium-6 btn--primary btn--small"
+                    className="cell small-12 medium-6 large-4 button"
                     key={exerciseCat.categoryName}
                   >
                     {exerciseCat.categoryName}
@@ -102,18 +105,24 @@ const CreateWorkoutView = () => {
       )}
 
       {addNameView && (
-        <div className="grid-x">
+        <div className="grid-x align-center add-name-view">
+          <div className="cell text-center">
+            <PageTitle
+              title="Enter the name of your workout"
+            />
+          </div>
+
           <input
             type="text"
-            name="workoutName"
-            id="workoutName"
+            name="workout-name"
+            className="cell small-5 medium-5 large-4 workout-name"
             defaultValue={selectedCategory}
             onChange={(e) => setSelectedCategory(e.target.value)}
           />
 
           <div className="cell text-center">
             <button
-              className="btn--primary btn--small"
+              className="button"
               onClick={goToAddExercisesView}
             >
               Next
@@ -123,30 +132,36 @@ const CreateWorkoutView = () => {
       )}
 
       {selectedExercisesView && (
-        <div className="grid-x">
-          {selectedExercises.length > 0 &&
-            selectedExercises.map((exercise, i) => {
-              return (
-                <div
-                  className="cell shrink btn--primary btn--large"
-                  key={exercise.name + i}
-                >
-                  {exercise.name}
-                </div>
-              );
-            })}
+        <div className="grid-x align-center content selected-exercises">
+          <div className="cell small-12 medium-10 large-8">
+            <div className="grid-x grid-margin-x exercises">
 
-          <div className="cell text-center">
+              {selectedExercises.length > 0 &&
+                selectedExercises.map((exercise, i) => {
+                  return (
+                    <div
+                      className="cell small-12 medium-6 button button--small"
+                      key={exercise.name + i}
+                    >
+                      {exercise.name}
+                    </div>
+                  );
+                })}
+
+            </div>
+          </div>
+
+          <div className="cell text-center add-more">
             <button
-              className="btn--primary btn--small"
+              className="button button--outline"
               onClick={goToAddExercisesView}
             >
               Add more exercises
             </button>
           </div>
 
-          <div className="cell text-center">
-            <button className="btn--primary btn--small" onClick={saveWorkout}>
+          <div className="cell text-center save-workout">
+            <button className="button" onClick={saveWorkout}>
               Save workout
             </button>
           </div>
@@ -154,20 +169,28 @@ const CreateWorkoutView = () => {
       )}
 
       {addExercisesView && (
-        <div className="grid-x">
-          {exercisesJSON.data
-            .find((category) => category.categoryId === selectedCategoryId)
-            .exercises.map((exerciseCat) => {
-              return (
-                <button
-                  onClick={() => addToSelectedExercises(exerciseCat)}
-                  className="cell small-12 medium-6 btn--primary btn--small"
-                  key={exerciseCat}
-                >
-                  {exerciseCat}
-                </button>
-              );
-            })}
+        <div className="grid-x align-center content select-exercise">
+          <div className="cell text-center">
+            <PageTitle
+              title="Choose an exercise"
+            />
+          </div>
+
+          <div className="cell small-12 medium-10 large-8">
+            <div className="grid-x grid-margin-x">
+              {exercisesJSON.data.find((category) => category.categoryId === selectedCategoryId).exercises.map((exerciseCat) => {
+                return (
+                  <button
+                    onClick={() => addToSelectedExercises(exerciseCat)}
+                    className="cell small-12 medium-6 large-4 button button--outline"
+                    key={exerciseCat}
+                  >
+                    {exerciseCat}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
         </div>
       )}
 

@@ -58,9 +58,11 @@ const Workout = () => {
     <Fragment>
       {workoutView && workoutInfo && (
         <div className="grid-x content">
+          <div className="cell text-center">
           <PageTitle
           title={workoutInfo.workout_name}
         />
+          </div>
           <div className="cell table-names">
             <div className="grid-x">
               <div className="cell auto"></div>
@@ -88,9 +90,11 @@ const Workout = () => {
 
           <div className="cell">
             <div className="grid-x align-center">
-              <button onClick={updateWorkout} className="cell button">
+              <div className="cell text-center">
+              <button onClick={updateWorkout} className="button">
                 Finish Workout
               </button>
+              </div>
             </div>
           </div>
         </div>
