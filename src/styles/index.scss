@@ -20,6 +20,16 @@ body {
   }
 }
 
+::-webkit-scrollbar {
+  width: rem-calc(10);
+  color: white;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ffffff;
+  border-radius: 0;
+}
+
 p {
   font-size: rem-calc(18);
 }
