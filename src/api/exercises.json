@@ -4,10 +4,11 @@
       "categoryId": 1,
       "categoryName": "Hamstrings",
       "exercises": [
-        "Romanian Deadlift",
-        "DB Romanian Deadlift",
+        "Romanian deadlift",
+        "DB Romanian deadlift",
         "Sumo deadlift",
         "Straight-leg deadlift",
+        "Leg press",
         "Hip thrust",
         "Spine extension",
         "Leg curl",
@@ -19,8 +20,7 @@
         "Single leg deadlift",
         "Goblet sumo squat",
         "Cossack squats",
-        "Landmine RDL to squat",
-        "Leg press"
+        "Landmine RDL to squat"
       ]
     },
     {
