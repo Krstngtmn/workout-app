@@ -6,7 +6,7 @@ const WorkoutCreated = ({ workoutName }) => {
       <div className="cell text-center">
       <PageTitle
               title="Done!"
-              subtitle="You have created a new workout named {workoutName} !"
+              subtitle={`You have created a new workout named ${workoutName} !`}
             />
       </div>
     </div>

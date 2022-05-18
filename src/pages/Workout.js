@@ -57,6 +57,18 @@ const Workout = () => {
       });
   };
 
+  const deleteWorkout = () => {
+    axios
+      .post(`https://workout-db-olive.vercel.app/api/deleteworkout?workoutId=${workoutId}`)
+      .then(function (response) {
+        // console.log(response);
+        navigate("/", { replace: true });
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }
+
   return (
     <Fragment>
       {workoutView && workoutInfo && (
@@ -94,9 +106,15 @@ const Workout = () => {
           <div className="cell">
             <div className="grid-x align-center">
               <div className="cell text-center">
-              <button onClick={updateWorkout} className="button">
-                Finish Workout
-              </button>
+                <button onClick={updateWorkout} className="button">
+                  Finish Workout
+                </button>
+              </div>
+
+              <div className="cell text-center">
+                <button className="button-delete" onClick={deleteWorkout}>
+                  Delete workout
+                </button>
               </div>
             </div>
           </div>

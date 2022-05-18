@@ -199,7 +199,7 @@ const CreateWorkoutView = () => {
       )}
 
       {addWorkoutCreatedView && (
-        <WorkoutCreated selectedCategory={selectedCategory} />
+        <WorkoutCreated workoutName={selectedCategory} />
       )}
     </Fragment>
   );

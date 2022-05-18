@@ -16,7 +16,7 @@ const Account = () => {
   <div className="grid-x align-center content">
     <div className="cell text-center">
       <PageTitle
-        title="Welcome, <span>{adminUser.username}</span> "
+        title={`Welcome, <span>${adminUser.username}</span>`}
         subtitle="This is the Dashboard page. If you're logged in and have completed
         workouts, you will see your past workout sessions."
       />

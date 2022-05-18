@@ -85,6 +85,17 @@ p {
   }
 }
 
+.button-delete {
+  margin-top: rem-calc(40);
+  margin-bottom: rem-calc(60);
+  color: red;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
 .page-title {
   padding: rem-calc(40 0);
   color: $secondary-color;
