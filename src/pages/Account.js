@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import PageTitle from "../components/PageTitle";
+import StayStrong from "../assets/StayStrong.png"
 
 
 const Account = () => {
@@ -15,21 +16,26 @@ const Account = () => {
       <div className="cell small-12 medium-8 large-6 text-center">
         <PageTitle
           title={`Welcome, ${adminUser.username}`}
-          subtitle="This is the Dashboard page. If you're logged in and have completed
-          workouts, you will see your past workout sessions."
+          subtitle="Change your settings here"
         />
-        <div className="cell text-center">
-          <h3>Dark mode/light mode</h3>
-          <h3>Change email</h3>
-          <h3>Change password</h3>
-        </div>
-        <div className="cell text-center">
+            <Link to="/" className="button">
+            Dark mode
+            </Link>
+            <Link to="/" className="button">
+            Light mode
+            </Link>
+            <Link to="/" className="button">
+            Change email
+            </Link>
+            <Link to="/" className="button">
+            Change password
+            </Link>
+          <img src={StayStrong} />
           <Link to="/logout" className="button">
             Sign out
           </Link>
         </div>
-      </div>
-    </div>
+     </div>
   );
 };
 
